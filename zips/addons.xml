@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="plugin.video.salvation" name="Salvation" version="1.0.2" provider-name="Brothers From Another Mother powered by JEN">
+<addon id="plugin.video.salvation" name="Salvation" version="1.0.3" provider-name="Brothers From Another Mother powered by JEN">
     <requires>
         <import addon="xbmc.python" version="2.19.0" />
         <import addon="script.module.nanscrapers" version="0.5.5" />
@@ -11,6 +11,7 @@
         <import addon="script.module.xmltodict" version="0.9.0" />
         <!--<import addon="script.module.web-pdb" version="1.0"/>-->
         <import addon="script.module.urlresolver" version="1.2.0" />
+        <import addon="script.module.salvation" version="1.0" />
     </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
@@ -68,5 +69,29 @@
 		<description lang="en">Family only</description>
 		<genre></genre>
 	</extension>
+</addon>
+
+<addon id="script.module.salvation" name="Salvation Live" version="1.0" provider-name="MothersFrom Anothe Mother">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.livestreamer" />
+    <import addon="script.module.requests" />
+    <import addon="script.module.routing" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="addon.py">
+    <provides>all</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_gb">Live Tv</summary>
+    <description lang="en_gb">Live Tv</description>
+    <disclaimer lang="en_gb"></disclaimer>
+    <language></language>
+    <platform>all</platform>
+    <license></license>
+    <forum></forum>
+    <website></website>
+    <email></email>
+    <source></source>
+  </extension>
 </addon>
 </addons>
