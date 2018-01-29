@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="plugin.video.salvation" name="Salvation" version="1.0.3" provider-name="Brothers From Another Mother powered by JEN">
+<addon id="plugin.video.salvation" name="Salvation" version="1.0.4" provider-name="Brothers From Another Mother powered by JEN">
     <requires>
         <import addon="xbmc.python" version="2.19.0" />
         <import addon="script.module.nanscrapers" version="0.5.5" />
@@ -12,6 +12,7 @@
         <!--<import addon="script.module.web-pdb" version="1.0"/>-->
         <import addon="script.module.urlresolver" version="1.2.0" />
         <import addon="script.module.salvation" version="1.0" />
+        <import addon="script.module.verdict.live.nettv" version="1.0" />
     </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
@@ -53,7 +54,7 @@
     </extension>
 </addon>
 
-<addon id="repository.family" name="Family" version="0.0.3" provider-name="family">
+<addon id="repository.family" name="Family" version="0.0.4" provider-name="family">
 	<extension point="xbmc.addon.repository" name="Family">
 		<dir>
 			<info compressed="false">https://raw.githubusercontent.com/noobsandnerds/modules4all/master/zips/addons.xml</info>
@@ -84,6 +85,31 @@
   <extension point="xbmc.addon.metadata">
     <summary lang="en_gb">Live Tv</summary>
     <description lang="en_gb">Live Tv</description>
+    <disclaimer lang="en_gb"></disclaimer>
+    <language></language>
+    <platform>all</platform>
+    <license></license>
+    <forum></forum>
+    <website></website>
+    <email></email>
+    <source></source>
+  </extension>
+</addon>
+
+<addon id="script.module.verdict.live.nettv" name="Verdict Live NetTV" version="1.0" provider-name="RACC">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.pyamf" />
+    <import addon="script.module.livestreamer" />
+    <import addon="script.module.requests" />
+    <import addon="script.module.routing" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="addon.py">
+    <provides>all</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_gb">Live NetTV</summary>
+    <description lang="en_gb">Live NetTV</description>
     <disclaimer lang="en_gb"></disclaimer>
     <language></language>
     <platform>all</platform>
