@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="plugin.program.family" name="Family" version="0.0.1" provider-name="Family">
+<addon id="plugin.program.family" name="Family Installer" version="0.0.2" provider-name="Family">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>
@@ -69,7 +69,7 @@
     </extension>
 </addon>
 
-<addon id="repository.family" name="Family" version="0.0.4" provider-name="family">
+<addon id="repository.family" name="Family" version="0.0.5" provider-name="family">
 	<extension point="xbmc.addon.repository" name="Family">
 		<dir>
 			<info compressed="false">https://raw.githubusercontent.com/noobsandnerds/modules4all/master/zips/addons.xml</info>

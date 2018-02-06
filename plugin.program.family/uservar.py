@@ -4,7 +4,7 @@ import os, xbmc, xbmcaddon
 ### User Edit Variables #################################
 #########################################################
 ADDON_ID       = xbmcaddon.Addon().getAddonInfo('id')
-ADDONTITLE     = 'Family'
+ADDONTITLE     = 'Family Installer'
 EXCLUDES       = [ADDON_ID]
 # Text File with build info in it.
 BUILDFILE      = 'http://droidtime.org/repo/text/autobuilds.txt'
@@ -14,7 +14,7 @@ UPDATECHECK    = 0
 # Text File with apk info in it.
 APKFILE        = 'http://droidtime.org/repo/text/apk.txt'
 # Text File with Youtube Videos urls.  Leave as 'http://' to ignore
-YOUTUBETITLE   = ''
+YOUTUBETITLE   = 'http://'
 YOUTUBEFILE    = 'http://'
 # Text File for addon installer.  Leave as 'http://' to ignore
 ADDONFILE      = 'http://'
@@ -55,7 +55,7 @@ SPACER         = '='
 COLOR1         = 'dodgerblue'
 COLOR2         = 'white'
 # Primary menu items   / %s is the menu item and is required
-THEME1         = '[COLOR '+COLOR1+'][B][I]([COLOR '+COLOR2+']Family[/COLOR])[/B][/COLOR] [COLOR '+COLOR2+']%s[/COLOR][/I]'
+THEME1         = '[COLOR '+COLOR1+'][B][I]([COLOR '+COLOR2+']FAMILY[/COLOR])[/B][/COLOR] [COLOR '+COLOR2+']%s[/COLOR][/I]'
 # Build Names          / %s is the menu item and is required
 THEME2         = '[COLOR '+COLOR2+']%s[/COLOR]'
 # Alternate items      / %s is the menu item and is required
@@ -69,7 +69,7 @@ THEME5         = '[COLOR '+COLOR1+']Current Theme:[/COLOR] [COLOR '+COLOR2+']%s[
 # Enable 'Contact' menu item 'Yes' hide or 'No' dont hide
 HIDECONTACT    = 'No'
 # You can add \n to do line breaks
-CONTACT        = 'Thank you for choosing Family Wizard.\r\n\r\n'
+CONTACT        = ''
 #Images used for the contact window.  http:// for default icon and fanart
 CONTACTICON    = 'http://'
 CONTACTFANART  = 'http://'
@@ -79,7 +79,7 @@ CONTACTFANART  = 'http://'
 ### AUTO UPDATE #########################################
 ########## FOR THOSE WITH NO REPO #######################
 # Enable Auto Update 'Yes' or 'No'
-AUTOUPDATE     = 'No'
+AUTOUPDATE     = 'Yes'
 # Url to wizard version
 WIZARDFILE     = ''
 #########################################################
@@ -103,12 +103,12 @@ REPOZIPURL     = ''
 # Enable Notification screen Yes or No
 ENABLE         = 'No'
 # Url to notification file
-NOTIFICATION   = ''
+NOTIFICATION   = 'http://'
 # Use either 'Text' or 'Image'
-HEADERTYPE     = ''
+HEADERTYPE     = 'Text'
 HEADERMESSAGE  = ''
 # url to image if using Image 424x180
-HEADERIMAGE    = ''
+HEADERIMAGE    = 'http://'
 # Background for Notification Window
-BACKGROUND     = ''
+BACKGROUND     = 'http://'
 #########################################################
