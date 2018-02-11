@@ -15,7 +15,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.salvation" name="Salvation" version="1.0.4" provider-name="Brothers From Another Mother powered by JEN">
+<addon id="plugin.video.salvation" name="Salvation" version="1.0.5" provider-name="Brothers From Another Mother powered by JEN">
     <requires>
         <import addon="xbmc.python" version="2.19.0" />
         <import addon="script.module.nanscrapers" version="0.5.5" />
@@ -25,9 +25,9 @@
         <import addon="script.module.addon.common" version="2.0.0" />
         <import addon="script.module.xmltodict" version="0.9.0" />
         <!--<import addon="script.module.web-pdb" version="1.0"/>-->
-        <import addon="script.module.urlresolver" version="1.2.0" />
+        <import addon="script.module.resolveurl" />
         <import addon="script.module.salvation" version="1.0" />
-        <import addon="script.module.verdict.live.nettv" version="1.0" />
+        <import addon="script.module.ektos.net" version="1.0" />
     </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
@@ -35,32 +35,6 @@
     <extension point="xbmc.service" library="service.py" start="[login|startup]" />
     <extension point="xbmc.addon.metadata">
       <summary lang="en">Salvation Movies and TV Shows</summary>
-      <description lang="en">This addon is powered by JEN. This addon simply links to websites for content that are freely available on the internet . Use at your own risk!</description>
-      <disclaimer lang="en">This addon does not host any content.This addon does not form part of the Kodi Foundation. Please do not seek assistance with this addon from any of the Official Kodi Support Channels.</disclaimer>
-      <platform>all</platform>
-        <website></website>
-        <video_guide></video_guide>
-    </extension>
-</addon>
-
-<addon id="plugin.video.wac" name="Wide Awake Club" version="1.0.2" provider-name="Simplicity">
-    <requires>
-        <import addon="xbmc.python" version="2.19.0" />
-        <import addon="script.module.nanscrapers" version="0.5.5" />
-        <import addon="script.module.python.koding.aio" version="0.9.6.6" />
-        <import addon="script.module.beautifulsoup" version="3.2.1" />
-        <import addon="script.module.requests" version="2.9.1" />
-        <import addon="script.module.addon.common" version="2.0.0" />
-        <import addon="script.module.xmltodict" version="0.9.0" />
-        <!--<import addon="script.module.web-pdb" version="1.0"/>-->
-        <import addon="script.module.urlresolver" version="1.2.0" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.service" library="service.py" start="[login|startup]" />
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en">Wide Awake Club Movies and TV Shows</summary>
       <description lang="en">This addon is powered by JEN. This addon simply links to websites for content that are freely available on the internet . Use at your own risk!</description>
       <disclaimer lang="en">This addon does not host any content.This addon does not form part of the Kodi Foundation. Please do not seek assistance with this addon from any of the Official Kodi Support Channels.</disclaimer>
       <platform>all</platform>
@@ -87,7 +61,7 @@
 	</extension>
 </addon>
 
-<addon id="script.module.salvation" name="Salvation Live" version="1.0" provider-name="MothersFrom Anothe Mother">
+<addon id="script.module.salvation" name="Salvation Live" version="1.1" provider-name="MothersFrom Anothe Mother">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.livestreamer" />
@@ -111,7 +85,7 @@
   </extension>
 </addon>
 
-<addon id="script.module.verdict.live.nettv" name="Verdict Live NetTV" version="1.0" provider-name="RACC">
+<addon id="script.module.salvation.net" name="Salvation Live NetTV" version="1.1" provider-name="BFAM/RACC">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.pyamf" />
@@ -123,8 +97,8 @@
     <provides>all</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary lang="en_gb">Live NetTV</summary>
-    <description lang="en_gb">Live NetTV</description>
+    <summary lang="en_gb">Salvation Live NetTV Dependency</summary>
+    <description lang="en_gb">Salvation Live NetTV Dependency</description>
     <disclaimer lang="en_gb"></disclaimer>
     <language></language>
     <platform>all</platform>
