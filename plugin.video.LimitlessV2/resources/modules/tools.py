@@ -1,5 +1,5 @@
 import os,re,sys,xbmc,json,base64,client,control,string,urllib,urlparse,requests,shutil,xbmcplugin,xbmcgui,socket
-ADDONTITLE     = 'Limitless IPTV'
+ADDONTITLE     = 'LimitlessV2'
 
 def regex_from_to(text, from_string, to_string, excluding=True):
 	if excluding:
@@ -41,7 +41,7 @@ def addDirMeta(name,url,mode,iconimage,fanart,description,year,cast,rating,runti
 	liz.setProperty('fanart_image', fanart)
 	liz.setProperty("IsPlayable","true")
 	cm = []
-	cm.append(('Play Trailer','XBMC.RunPlugin(plugin://plugin.video.LimitlessIPTV/?mode=9&url='+str(name)+')'))
+	cm.append(('Play Trailer','XBMC.RunPlugin(plugin://plugin.video.LimitlessV2/?mode=9&url='+str(name)+')'))
 	cm.append(('Movie Information', 'XBMC.Action(Info)'))
 	liz.addContextMenuItems(cm,replaceItems=True)
 	ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=u,listitem=liz,isFolder=False)

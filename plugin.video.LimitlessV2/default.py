@@ -7,7 +7,7 @@ import xml.etree.ElementTree as ElementTree
 #################################
 
 #############Defined Strings#############
-addon_id     = 'plugin.video.LimitlessIPTV'
+addon_id     = 'plugin.video.LimitlessV2'
 selfAddon    = xbmcaddon.Addon(id=addon_id)
 icon         = xbmc.translatePath(os.path.join('special://home/addons/' + addon_id, 'icon.png'))
 fanart       = xbmc.translatePath(os.path.join('special://home/addons/' + addon_id , 'fanart.jpg'))
@@ -15,8 +15,8 @@ fanart       = xbmc.translatePath(os.path.join('special://home/addons/' + addon_
 username     = control.setting('Username')
 password     = control.setting('Password')
 
-host         = 'http://limitless-iptv.is-found.org'
-port         = '25461'
+host         = 'http://limitlessvpn.hopto.org'
+port         = '24625'
 
 live_url     = '%s:%s/enigma2.php?username=%s&password=%s&type=get_live_categories'%(host,port,username,password)
 vod_url      = '%s:%s/enigma2.php?username=%s&password=%s&type=get_vod_categories'%(host,port,username,password)
@@ -24,8 +24,8 @@ panel_api    = '%s:%s/panel_api.php?username=%s&password=%s'%(host,port,username
 play_url     = '%s:%s/live/%s/%s/'%(host,port,username,password)
 
 
-Guide = xbmc.translatePath(os.path.join('special://home/addons/plugin.video.LimitlessIPTV/resources/catchup', 'guide.xml'))
-GuideLoc = xbmc.translatePath(os.path.join('special://home/addons/plugin.video.LimitlessIPTV/resources/catchup', 'g'))
+Guide = xbmc.translatePath(os.path.join('special://home/addons/plugin.video.LimitlessV2/resources/catchup', 'guide.xml'))
+GuideLoc = xbmc.translatePath(os.path.join('special://home/addons/plugin.video.LimitlessV2/resources/catchup', 'g'))
 
 advanced_settings           =  xbmc.translatePath('special://home/addons/'+addon_id+'/resources/advanced_settings')
 advanced_settings_target    =  xbmc.translatePath(os.path.join('special://home/userdata','advancedsettings.xml'))
@@ -48,10 +48,10 @@ def start():
 			xbmcgui.Dialog().ok('Attention', line1, line2, line3)
 			start()
 		else:
-			line1 = "Login Sucsessfull"
-			line2 = "Welcome to Limitless IPTV" 
+			line1 = "Login Successful"
+			line2 = "Welcome to LimitlessV2" 
 			line3 = ('[COLOR blue]%s[/COLOR]'%user)
-			xbmcgui.Dialog().ok('Limitless IPTV', line1, line2, line3)
+			xbmcgui.Dialog().ok('LimitlessV2', line1, line2, line3)
 			tvguidesetup()
 			addonsettings('ADS2','')
 			xbmc.executebuiltin('Container.Refresh')
@@ -60,15 +60,15 @@ def start():
 		auth = '%s:%s/enigma2.php?username=%s&password=%s&type=get_vod_categories'%(host,port,username,password)
 		auth = tools.OPEN_URL(auth)
 		if not auth=="":
-			tools.addDir('Account Information','url',6,icon,fanart,'')
-			tools.addDir('Live TV','live',1,icon,fanart,'')
-			tools.addDir('Catchup TV','url',12,icon,fanart,'')
+			tools.addDir('[COLOR yellow]Account Information[/COLOR]','url',6,icon,fanart,'')
+			tools.addDir('[COLOR ff1a1aff]Live Tv[/COLOR]','live',1,icon,fanart,'')
+			tools.addDir('[COLOR yellow]Catchup TV[/COLOR]','url',12,icon,fanart,'')
 			if xbmc.getCondVisibility('System.HasAddon(pvr.iptvsimple)') or xbmc.getCondVisibility('System.HasAddon(script.ivueguide)'):
-				tools.addDir('TV Guide','pvr',7,icon,fanart,'')
-			tools.addDir('VOD','vod',3,icon,fanart,'')
-			tools.addDir('Search','url',5,icon,fanart,'')
-			tools.addDir('Settings','url',8,icon,fanart,'')
-			tools.addDir('Extras','url',16,icon,fanart,'')
+				tools.addDir('[COLOR ff1a1aff]TV Guide[/COLOR]','pvr',7,icon,fanart,'')
+			tools.addDir('[COLOR yellow]VOD[/COLOR]','vod',3,icon,fanart,'')
+			tools.addDir('[COLOR ff1a1aff]Search[/COLOR]','url',5,icon,fanart,'')
+			tools.addDir('[COLOR yellow]Settings[/COLOR]','url',8,icon,fanart,'')
+			tools.addDir('[COLOR ff1a1aff]Extras[/COLOR]','url',16,icon,fanart,'')
 def home():
 	tools.addDir('Account Information','url',6,icon,fanart,'')
 	tools.addDir('Live TV','live',1,icon,fanart,'')
@@ -148,7 +148,7 @@ def vod(url):
 		
 ##########################################
 def catchup():
-    loginurl   = "http://limitless-iptv.is-found.org:25461/get.php?username=" + username + "&password=" + password + "&type=m3u_plus&output=ts"
+    loginurl   = "http://limitlessvpn.hopto.org:24625/get.php?username=" + username + "&password=" + password + "&type=m3u_plus&output=ts"
     try:
         connection = urllib2.urlopen(loginurl)
         print connection.getcode()
@@ -252,7 +252,7 @@ def _pbhook(numblocks, blocksize, filesize, dp, start_time):
             dp.update(percent) 
         if dp.iscanceled():
             dialog = xbmcgui.Dialog()
-            dialog.ok("LimitlessIPTV", 'The download was cancelled.')
+            dialog.ok("LimitlessV2", 'The download was cancelled.')
 				
             sys.exit()
             dp.close()
@@ -279,7 +279,7 @@ def stream_video(url):
 	
 	
 def searchdialog():
-	search = control.inputDialog(heading='Search Limitless IPTV:')
+	search = control.inputDialog(heading='Search LimitlessV2:')
 	if search=="":
 		return
 	else:
@@ -320,53 +320,53 @@ def addonsettings(url,description):
 		dialog = xbmcgui.Dialog().select('Edit Advanced Settings', ['Enable Fire TV Stick AS','Enable Fire TV AS','Enable 1GB Ram or Lower AS','Enable 2GB Ram or Higher AS','Enable Nvidia Shield AS','Disable AS'])
 		if dialog==0:
 			advancedsettings('stick')
-			xbmcgui.Dialog().ok('Limitless IPTV', 'Set Advanced Settings')
+			xbmcgui.Dialog().ok('LimitlessV2', 'Set Advanced Settings')
 		elif dialog==1:
 			advancedsettings('firetv')
-			xbmcgui.Dialog().ok('Limitless IPTV', 'Set Advanced Settings')
+			xbmcgui.Dialog().ok('LimitlessV2', 'Set Advanced Settings')
 		elif dialog==2:
 			advancedsettings('lessthan')
-			xbmcgui.Dialog().ok('Limitless IPTV', 'Set Advanced Settings')
+			xbmcgui.Dialog().ok('LimitlessV2', 'Set Advanced Settings')
 		elif dialog==3:
 			advancedsettings('morethan')
-			xbmcgui.Dialog().ok('Limitless IPTV', 'Set Advanced Settings')
+			xbmcgui.Dialog().ok('LimitlessV2', 'Set Advanced Settings')
 		elif dialog==4:
 			advancedsettings('shield')
-			xbmcgui.Dialog().ok('Limitless IPTV', 'Set Advanced Settings')
+			xbmcgui.Dialog().ok('LimitlessV2', 'Set Advanced Settings')
 		elif dialog==5:
 			advancedsettings('remove')
-			xbmcgui.Dialog().ok('Limitless IPTV', 'Advanced Settings Removed')
+			xbmcgui.Dialog().ok('LimitlessV2', 'Advanced Settings Removed')
 	elif url =="ADS2":
 		dialog = xbmcgui.Dialog().select('Select Your Device Or Closest To', ['Fire TV Stick ','Fire TV','1GB Ram or Lower','2GB Ram or Higher','Nvidia Shield'])
 		if dialog==0:
 			advancedsettings('stick')
-			xbmcgui.Dialog().ok('Limitless IPTV', 'Set Advanced Settings')
+			xbmcgui.Dialog().ok('LimitlessV2', 'Set Advanced Settings')
 		elif dialog==1:
 			advancedsettings('firetv')
-			xbmcgui.Dialog().ok('Limitless IPTV', 'Set Advanced Settings')
+			xbmcgui.Dialog().ok('LimitlessV2', 'Set Advanced Settings')
 		elif dialog==2:
 			advancedsettings('lessthan')
-			xbmcgui.Dialog().ok('Limitless IPTV', 'Set Advanced Settings')
+			xbmcgui.Dialog().ok('LimitlessV2', 'Set Advanced Settings')
 		elif dialog==3:
 			advancedsettings('morethan')
-			xbmcgui.Dialog().ok('Limitless IPTV', 'Set Advanced Settings')
+			xbmcgui.Dialog().ok('LimitlessV2', 'Set Advanced Settings')
 		elif dialog==4:
 			advancedsettings('shield')
-			xbmcgui.Dialog().ok('Limitless IPTV', 'Set Advanced Settings')
+			xbmcgui.Dialog().ok('LimitlessV2', 'Set Advanced Settings')
 	elif url =="tv":
 		dialog = xbmcgui.Dialog().select('Select a TV Guide to Setup', ['iVue TV Guide','PVR TV Guide','Both'])
 		if dialog==0:
 			ivueint()
-			xbmcgui.Dialog().ok('Limitless IPTV', 'iVue Integration Complete')
+			xbmcgui.Dialog().ok('LimitlessV2', 'iVue Integration Complete')
 		elif dialog==1:
 			pvrsetup()
-			xbmcgui.Dialog().ok('Limitless IPTV', 'PVR Integration Complete')
+			xbmcgui.Dialog().ok('LimitlessV2', 'PVR Integration Complete')
 		elif dialog==2:
 			pvrsetup()
 			ivueint()
-			xbmcgui.Dialog().ok('Limitless IPTV', 'PVR & iVue Integration Complete')
+			xbmcgui.Dialog().ok('LimitlessV2', 'PVR & iVue Integration Complete')
 	elif url =="ST":
-		xbmc.executebuiltin('Runscript("special://home/addons/plugin.video.LimitlessIPTV/resources/modules/speedtest.py")')
+		xbmc.executebuiltin('Runscript("special://home/addons/plugin.video.LimitlessV2/resources/modules/speedtest.py")')
 	elif url =="META":
 		if 'ON' in description:
 			xbmcaddon.Addon().setSetting('meta','false')
@@ -417,7 +417,7 @@ def pvrsetup():
 		
 		
 def asettings():
-	choice = xbmcgui.Dialog().yesno('Limitless IPTV', 'Please Select The RAM Size of Your Device', yeslabel='Less than 1GB RAM', nolabel='More than 1GB RAM')
+	choice = xbmcgui.Dialog().yesno('LimitlessV2', 'Please Select The RAM Size of Your Device', yeslabel='Less than 1GB RAM', nolabel='More than 1GB RAM')
 	if choice:
 		lessthan()
 	else:
@@ -494,14 +494,14 @@ def accountinfo():
 	
 def correctPVR():
 
-	addon = xbmcaddon.Addon('plugin.video.LimitlessIPTV')
+	addon = xbmcaddon.Addon('plugin.video.LimitlessV2')
 	username_text = addon.getSetting(id='Username')
 	password_text = addon.getSetting(id='Password')
 	jsonSetPVR = '{"jsonrpc":"2.0", "method":"Settings.SetSettingValue", "params":{"setting":"pvrmanager.enabled", "value":true},"id":1}'
 	IPTVon 	   = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"pvr.iptvsimple","enabled":true},"id":1}'
 	nulldemo   = '{"jsonrpc":"2.0","method":"Addons.SetAddonEnabled","params":{"addonid":"pvr.demo","enabled":false},"id":1}'
-	loginurl   = "http://limitless-iptv.is-found.org:25461/get.php?username=" + username_text + "&password=" + password_text + "&type=m3u_plus&output=ts"
-	EPGurl     = "http://limitless-iptv.is-found.org:25461/xmltv.php?username=" + username_text + "&password=" + password_text + "&type=m3u_plus&output=ts"
+	loginurl   = "http://limitlessvpn.hopto.org:24625/get.php?username=" + username_text + "&password=" + password_text + "&type=m3u_plus&output=ts"
+	EPGurl     = "http://limitlessvpn.hopto.org:24625/xmltv.php?username=" + username_text + "&password=" + password_text + "&type=m3u_plus&output=ts"
 
 	xbmc.executeJSONRPC(jsonSetPVR)
 	xbmc.executeJSONRPC(IPTVon)
@@ -518,19 +518,19 @@ def ivueint():
 	ivuesetup.iVueInt()
 	
 def tvguidesetup():
-		dialog = xbmcgui.Dialog().yesno('Limitless IPTV','Would You like us to Setup the TV Guide for You?')
+		dialog = xbmcgui.Dialog().yesno('LimitlessV2','Would You like us to Setup the TV Guide for You?')
 		if dialog:
 			dialog = xbmcgui.Dialog().select('Select a TV Guide to Setup', ['iVue TV Guide','PVR TV Guide','Both'])
 			if dialog==0:
 				ivueint()
-				xbmcgui.Dialog().ok('Limitless IPTV', 'iVue Integration Complete')
+				xbmcgui.Dialog().ok('LimitlessV2', 'iVue Integration Complete')
 			elif dialog==1:
 				pvrsetup()
-				xbmcgui.Dialog().ok('Limitless IPTV', 'PVR Integration Complete')
+				xbmcgui.Dialog().ok('LimitlessV2', 'PVR Integration Complete')
 			elif dialog==2:
 				pvrsetup()
 				ivueint()
-				xbmcgui.Dialog().ok('Limitless IPTV', 'PVR & iVue Integration Complete')
+				xbmcgui.Dialog().ok('LimitlessV2', 'PVR & iVue Integration Complete')
 
 def num2day(num):
 	if num =="0":

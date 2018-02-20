@@ -6,8 +6,8 @@ username     = control.setting('Username')
 password     = control.setting('Password')
 def Get():
 	xbmc.executebuiltin("ActivateWindow(busydialog)")
-	m3u  = 'http://limitless-iptv.is-found.org%3A25461%2Fget.php%3Fusername%3D'+username+'%26password%3D'+password+'%26type%3Dm3u_plus%26output%3Dts'
-	epg  = 'http://limitless-iptv.is-found.org%3A25461%2Fxmltv.php%3Fusername%3D'+username+'%26password%3D'+password
+	m3u  = 'http://limitlessvpn.hopto.org:24625/get.php?username='+username+'&password='+password+'&type=m3u_plus&output=ts'
+	epg  = 'http://limitlessvpn.hopto.org:24625/xmltv.php?username='+username+'&password='+password
 	auth = 'http://limitless-iptv.is-found.org:25461/enigma2.php?username='+username+'&password='+password+'&type=get_vod_categories'
 	auth = tools.OPEN_URL(auth)
 	if not auth=="":

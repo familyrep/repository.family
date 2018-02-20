@@ -28,23 +28,23 @@ from resources.modules import downloader
 username     =  control.setting('Username')
 password     =  control.setting('Password')
 USERDATA     =  xbmc.translatePath(os.path.join('special://home/userdata',''))
-ini          =  xbmc.translatePath(os.path.join('special://home/addons/plugin.video.LimitlessIPTV/resources/ivue','LimitlessIPTV.ini'))
-inizip       = 	xbmc.translatePath(os.path.join('special://home/addons/plugin.video.LimitlessIPTV/resources/ivue','plugin.video.LimitlessIPTV.zip'))
+ini          =  xbmc.translatePath(os.path.join('special://home/addons/plugin.video.LimitlessV2/resources/ivue','LimitlessV2.ini'))
+inizip       = 	xbmc.translatePath(os.path.join('special://home/addons/plugin.video.LimitlessV2/resources/ivue','plugin.video.LimitlessV2.zip'))
 tmpini       =  xbmc.translatePath(os.path.join('special://home/userdata',''))
-ivuetarget   =  xbmc.translatePath(os.path.join('special://home/userdata/addon_data/script.ivueguide/resources/ini/plugin.video.LimitlessIPTV'))
+ivuetarget   =  xbmc.translatePath(os.path.join('special://home/userdata/addon_data/script.ivueguide/resources/ini/plugin.video.LimitlessV2'))
 def iVueInt():
 	xbmc.executebuiltin("ActivateWindow(busydialog)")
 	dp = xbmcgui.DialogProgress()
-	dp.create("LimitlessIPTV","Copying ini",'', 'Please Wait')
+	dp.create("LimitlessV2","Copying ini",'', 'Please Wait')
 	unzip(inizip,ivuetarget,dp)
 	
 	iVue_SETTINGS = xbmc.translatePath(os.path.join('special://home/userdata/addon_data/script.ivueguide','settings.xml'))
 	UseriVueSets = xbmc.translatePath(os.path.join('special://home/userdata/addon_data/script.ivueguide','oldsettings.xml'))
-	iVueSet = xbmc.translatePath(os.path.join('special://home/addons/plugin.video.LimitlessIPTV/resources/ivue','ivuesettings.xml'))
-	iVueFold = xbmc.translatePath(os.path.join('special://home/addons/plugin.video.LimitlessIPTV/resources/ivue'))
+	iVueSet = xbmc.translatePath(os.path.join('special://home/addons/plugin.video.LimitlessV2/resources/ivue','ivuesettings.xml'))
+	iVueFold = xbmc.translatePath(os.path.join('special://home/addons/plugin.video.LimitlessV2/resources/ivue'))
 	iVue_DATA = xbmc.translatePath(os.path.join('special://home/userdata/addon_data/script.ivueguide/'))
 	if not xbmc.getCondVisibility('System.HasAddon(script.ivueguide)'):
-		install('iVue','https://raw.githubusercontent.com/totaltec2014/ivue2/master/script.ivueguide/script.ivueguide-3.0.3.zip')
+		install('iVue','https://raw.githubusercontent.com/totaltec2014/ivue2/master/script.ivueguide/script.ivueguide-4.0.0.zip')
 		install('iVue','https://raw.githubusercontent.com/totaltec2014/ivue2/master/xbmc.repo.ivueguide/xbmc.repo.ivueguide-0.0.1.zip')
 		xbmc.executebuiltin("UpdateAddonRepos")
 		xbmc.executebuiltin("UpdateLocalAddons")
@@ -69,7 +69,7 @@ def iVueInt():
 
 	FullDB = os.path.join(iVueFold, 'ivuedb.zip')
 	dp = xbmcgui.DialogProgress()
-	dp.create("LimitlessIPTV","Copying DB",'', 'Please Wait')
+	dp.create("LimitlessV2","Copying DB",'', 'Please Wait')
 	unzip(FullDB,iVue_DATA,dp)
 	xbmc.log("Full iVue Master DB Copied")
 	xbmc.executebuiltin("Dialog.Close(busydialog)")
@@ -107,7 +107,7 @@ def unzip(_in, _out, dp):
 def install(name,url):
     path = xbmc.translatePath(os.path.join('special://home/addons','packages'))
     dp = xbmcgui.DialogProgress()
-    dp.create("LimitlessIPTV","Installing iVue TV Guide...",'', 'Please Wait')
+    dp.create("LimitlessV2","Installing iVue TV Guide...",'', 'Please Wait')
     lib=os.path.join(path, 'content.zip')
     try:
        os.remove(lib)
@@ -117,7 +117,7 @@ def install(name,url):
     addonfolder = xbmc.translatePath(os.path.join('special://home','addons'))
     time.sleep(3)
     dp = xbmcgui.DialogProgress()
-    dp.create("LimitlessIPTV","Installing iVue TV Guide...",'', 'Please Wait')
+    dp.create("LimitlessV2","Installing iVue TV Guide...",'', 'Please Wait')
     dp.update(0,"", "Installing iVue TV Guide... Please Wait")
     print '======================================='
     print addonfolder
