@@ -151,7 +151,7 @@ def settings():
 
 @route(mode="ScraperSettings")
 def scraper_settings():
-    xbmcaddon.Addon('script.module.nanscrapers').openSettings()
+    xbmcaddon.Addon('script.module.universalscrapers').openSettings()
 
 
 @route(mode="ResolverSettings")
@@ -185,8 +185,8 @@ def clear_cache():
         koding.Remove_Table("meta")
         koding.Remove_Table("episode_meta")
     if dialog.yesno(addon_name, _("Clear Scraper Cache?")):
-        import nanscrapers
-        nanscrapers.clear_cache()
+        import universalscrapers
+        universalscrapers.clear_cache()
     if dialog.yesno(addon_name, _("Clear GIF Cache?")):
         dest_folder = os.path.join(
             xbmc.translatePath(xbmcaddon.Addon().getSetting("cache_folder")),
