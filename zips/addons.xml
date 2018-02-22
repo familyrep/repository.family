@@ -86,7 +86,7 @@
         </extension>
     </addon>
 
-<addon id="repository.family" name="[COLOR lime]Family[/COLOR]" version="0.0.15" provider-name="family">
+<addon id="repository.family" name="[COLOR lime]Family[/COLOR]" version="0.0.16" provider-name="family">
      <requires>
             <import addon="xbmc.addon" version="12.0.0"/>
      </requires>
