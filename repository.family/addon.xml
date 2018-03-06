@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.family" name="[COLOR lime]Family[/COLOR]" version="0.0.17" provider-name="family">
+<addon id="repository.family" name="[COLOR lime]Family[/COLOR]" version="0.0.18" provider-name="family">
      <requires>
             <import addon="xbmc.addon" version="12.0.0"/>
      </requires>
