@@ -1,60 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="plugin.video.hobbit" version="2018.03.07" name="The Hobbit" provider-name="The Hobbit">
-    <requires>
-        <import addon="xbmc.python" version="2.19.0"/>
-        <import addon="script.hobbit.artwork" version="2017.11.12"/>
-        <import addon="script.module.resolveurl" />
-        <import addon="script.module.metahandler" version="2.9.0"/>
-        <import addon="script.module.requests" version="2.12.4"/>
-        <import addon="script.module.beautifulsoup" version="3.2.1"/>
-        <import addon="script.module.schism.common" version="2017.06.08"/>
-        <import addon="script.module.futures" version="2.2.0"/>
-        <import addon="script.module.universalscrapers" version="1.0.0"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="hobbit.py">
+<addon id="plugin.video.LimitlessV2"
+       name="Limitless [COLOR blue]V3[/COLOR]"
+       version="1.2"
+       provider-name="sClarke">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.module.requests" />
+  </requires>
+  <extension point="xbmc.python.pluginsource"
+            library="default.py">
         <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">The Hobbit movies and TV shows</summary>
-        <description lang="en">Watch movies and TV shows in high quality! Please note that this addon is not an official part of the Kodi media player and is therefore not to be mentioned within Kodi's official support channels. This addon has nothing to do with the media player itself, nor its intended use, it is simply a third party plugin which has been added to your system.</description>
-        <disclaimer lang="en">The author does not host any content, nor is he affiliated with any of the content providers.</disclaimer>
-        <platform>all</platform>
-        <news>Fork of Elysium/Hobbit credit to original Devs / Replaced more lists / Fixed channels / Added resolution to scraper dialog (thanks to Mr Blamo)</news>
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">LimitlessV3</summary>
+    <language>en</language>
+    <description lang="en">LimitlessV3 Official Addon - Supplier of Great Quality and Stable Streams</description>
+     <platform>all</platform>
+  </extension>
 </addon>
 
-<addon id="plugin.video.salvation" name="Salvation" version="1.0.9" provider-name="Brothers From Another Mother powered by JEN">
-    <requires>
-        <import addon="xbmc.python" version="2.19.0" />
-        <import addon="script.module.universalscrapers" version="0.5.5" />
-        <import addon="script.module.python.koding.aio" version="0.9.6.6" />
-        <import addon="script.module.beautifulsoup" version="3.2.1" />
-        <import addon="script.module.requests" version="2.9.1" />
-        <import addon="script.module.addon.common" version="2.0.0" />
-        <import addon="script.module.xmltodict" version="0.9.0" />
-        <!--<import addon="script.module.web-pdb" version="1.0"/>-->
-        <import addon="script.module.resolveurl" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.service" library="service.py" start="[login|startup]" />
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en">Salvation Movies and TV Shows</summary>
-      <description lang="en">This addon is powered by JEN. This addon simply links to websites for content that are freely available on the internet . Use at your own risk!</description>
-      <disclaimer lang="en">This addon does not host any content.This addon does not form part of the Kodi Foundation. Please do not seek assistance with this addon from any of the Official Kodi Support Channels.</disclaimer>
-      <platform>all</platform>
-        <website></website>
-        <video_guide></video_guide>
-    </extension>
-</addon>
-
-<addon id="repository.family" name="[COLOR lime]Family[/COLOR]" version="0.0.20" provider-name="family">
+<addon id="repository.family" name="[COLOR lime]Family[/COLOR]" version="0.0.21" provider-name="family">
      <requires>
             <import addon="xbmc.addon" version="12.0.0"/>
      </requires>
