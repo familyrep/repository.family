@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="plugin.video.LimitlessV2"
+<addon id="plugin.video.LimitlessV3"
        name="Limitless [COLOR blue]V3[/COLOR]"
-       version="1.2"
+       version="1.0"
        provider-name="sClarke">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -20,7 +20,7 @@
   </extension>
 </addon>
 
-<addon id="repository.family" name="[COLOR lime]Family[/COLOR]" version="0.0.21" provider-name="family">
+<addon id="repository.family" name="[COLOR lime]Family[/COLOR]" version="0.0.22" provider-name="family">
      <requires>
             <import addon="xbmc.addon" version="12.0.0"/>
      </requires>
