@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="plugin.video.LimitlessV3"
-       name="Limitless [COLOR blue]V3[/COLOR]"
-       version="1.0"
-       provider-name="sClarke">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-	<import addon="script.module.requests" />
-  </requires>
-  <extension point="xbmc.python.pluginsource"
-            library="default.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">LimitlessV3</summary>
-    <language>en</language>
-    <description lang="en">LimitlessV3 Official Addon - Supplier of Great Quality and Stable Streams</description>
-     <platform>all</platform>
-  </extension>
+<addon id="repository.beast" name="[COLOR red]Beast TV Repository[/COLOR]" version="1.0" provider-name="Boom">
+	<extension point="xbmc.addon.repository" name="Beast TVRepository">
+		<info compressed="false">http://beastrepo.com/repo/addons.xml</info>
+		<checksum>http://beastrepo.com/repo/addons.xml.md5</checksum>
+		<datadir zip="true">http://beastrepo.com/repo/</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>[COLOR Red]Beast TV[/COLOR] Repository</summary>
+		<description>Repo for Beast TV</description>
+		<platform>all</platform>
+	</extension>
 </addon>
 
-<addon id="repository.family" name="[COLOR lime]Family[/COLOR]" version="0.0.22" provider-name="family">
+<addon id="repository.family" name="[COLOR lime]Family[/COLOR]" version="0.0.2" provider-name="family">
      <requires>
             <import addon="xbmc.addon" version="12.0.0"/>
      </requires>
